@@ -1,2 +1,0 @@
-# JavaScript
-Understanding JavaScript Concepts
