@@ -1,18 +1,21 @@
-import { useState } from 'react'
- 
+ import { useState } from 'react'
 import './App.css'
-import UseRefHook from './components/UseRefHook'
-// import Counter from './components/Counter'
-// import ColorStyles from './components/ColorStyles'
- 
+import Navbar01 from './components/Navbar01'
+import { counterContext } from './Context/context01';
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  function increaseCount(){
+    setCount(count + 1);
+  }
 
   return (
     <>
-       {/* <Counter />
-       <ColorStyles /> */}
-       <UseRefHook />
+    <counterContext.Provider value={count}>
+       <Navbar01 count={count}/>
+       <button onClick={increaseCount}>Increase Count</button>
+       </counterContext.Provider>
     </>
   )
 }
